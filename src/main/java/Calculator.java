@@ -8,7 +8,11 @@ public class Calculator {
     }
 
     public int div(int a, int b) {
-        return b != 0 ? a / b : 0;
+      
+        if (b == 0) {
+            throw new ArithmeticException("Деление на ноль запрещено");
+        }
+        return a / b;
     }
 
     public int times(int a, int b) {
@@ -16,14 +20,17 @@ public class Calculator {
     }
 
     public int solver() {
-        int sum = add(5, 5);
-        int product = times(sum, 2);
-        int division = div(10, 2);
-        return dif(product, division);
+        int part1 = add(10, 5);
+        int part2 = times(part1, 2);
+        int part3 = div(20, 4);
+        int result = dif(part2, part3);
+
+        return result;
+
     }
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        System.out.println("Результат solver: " + calculator.solver());
+        System.out.println("Result of solver: " + calculator.solver());
     }
 }
