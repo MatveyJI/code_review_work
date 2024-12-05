@@ -8,6 +8,7 @@ public class Calculator {
     }
 
     public int div(int a, int b) {
+      
         if (b == 0) {
             throw new ArithmeticException("Деление на ноль запрещено");
         }
@@ -25,6 +26,7 @@ public class Calculator {
         int result = dif(part2, part3);
 
         return result;
+
     }
 
     public static void main(String[] args) {
